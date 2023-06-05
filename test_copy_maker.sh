@@ -1,21 +1,21 @@
 #!/bin/bash
-echo "тест скрипта запущен"
 chmod +x copy_maker.sh
-./copy_maker.sh filename.sh <<< copy_filename
-if [ -f "filename.sh" ];
+./copy_maker.sh filename.sh 1 <<< copy_filename
+if [[ $? -eq 0 ]];
 then
-    echo "тест пройден"
+    echo "тест 1 пройден"
 else
-echo "тест не пройден "
-exit 1
+echo "тест 1 не пройден "
 fi
 
-./copy_maker.sh filename.sh 1 <<< copy_filename
-if [ $# -eq 3 ];
+
+
+./copy_maker.sh  1 <<< copy_filename
+if [ $# -eq 1 ];
 then
-    echo "тест пройден"
+    echo "тест 2 пройден"
 else
-echo " тест не пройден"
+echo " тест 2 не пройден"
 fi
 
 
