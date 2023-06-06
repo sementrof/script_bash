@@ -2,11 +2,19 @@ name: Проверка репозитория
 on: [push]
 jobs:
   tests:
-    name: Тесты скриптов
+    name: Тесты скриптa
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Общий тест
+    - name: тест 1 на работаспособность скрипта
       run: |
-        chmod +x test_copy_maker.sh
-        ./test_copy_maker.sh
+        chmod +x test1.sh
+        ./test1.sh
+    - name: тест 2 на наличие всех аргументов
+      run: |
+        chmod +x test2.sh
+        ./test2.sh
+    - name: тест 3 на корректные аргументы
+      run: |
+        chmod +x test3.sh
+        ./test3.sh
